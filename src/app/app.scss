@@ -1,0 +1,25 @@
+.main-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  gap: 2rem;
+  align-items: flex-start; /* Evita que la tarjeta se estire hacia abajo */
+}
+
+.sidebar-container {
+  width: 300px;
+  flex-shrink: 0;
+  position: sticky; /* Hace que se quede fija al hacer scroll */
+  top: 100px; /* Distancia desde el menú superior */
+}
+
+.content-container {
+  flex-grow: 1; /* Ocupa el resto del espacio derecho disponible */
+}
+
+/* En móviles, la tarjeta pasa arriba y el contenido abajo */
+@media (max-width: 768px) {
+  .main-layout { flex-direction: column; }
+  .sidebar-container { width: 100%; position: static; }
+}

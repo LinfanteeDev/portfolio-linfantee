@@ -1,0 +1,63 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #333333;
+    
+    span {
+      color: #007bff; /* Un toque de color azul tecnológico */
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .lang-flags {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+
+      .flag {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        opacity: 0.4;
+        filter: grayscale(100%); /* Las pone en blanco y negro cuando no están activas */
+        
+        img {
+          border-radius: 2px; /* Redondea un poquito los bordes de la bandera */
+          box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Les da un toque de profundidad */
+        }
+
+        &.active {
+          opacity: 1;
+          filter: grayscale(0%); /* Devuelve el color a la bandera activa */
+        }
+      }
+    }
+  }
+}

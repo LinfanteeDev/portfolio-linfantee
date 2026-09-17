@@ -1,0 +1,18 @@
+<header class="navbar">
+  <div class="logo">Linfantee<span>.dev</span></div>
+
+  <div class="controls">
+    <button class="theme-toggle" (click)="toggleTheme()" title="Cambiar tema">
+        {{ isDarkMode ? '🌙' : '☀️' }}
+    </button>
+
+    <div class="lang-flags">
+      <button class="flag" [class.active]="currentLang === 'es'" (click)="changeLang('es')" title="Español">
+        <img src="https://flagcdn.com/es.svg" alt="Español" width="24">
+      </button>
+      <button class="flag" [class.active]="currentLang === 'en'" (click)="changeLang('en')" title="English">
+        <img src="https://flagcdn.com/gb.svg" alt="English" width="24">
+      </button>
+    </div>
+  </div>
+</header>

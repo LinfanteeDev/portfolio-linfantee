@@ -1,0 +1,57 @@
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eeeeee;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #007bff; /* Anillo azul */
+
+    img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover;
+      object-position: center 15%; /* Mueve el enfoque un poco hacia arriba */
+      transform: scale(1.15); /* Hace un ligero zoom del 15% para rellenar mejor */
+    }
+  }
+
+  h2 { margin: 0; font-size: 1.5rem; color: #333333; }
+  .role { color: #666666; font-weight: 500; margin: 0.5rem 0 1.5rem; }
+
+  .btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 1.5rem;
+
+    &:hover { background-color: #0056b3; }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: transform 0.2s;
+      &:hover { transform: scale(1.2); }
+    }
+  }
+}
