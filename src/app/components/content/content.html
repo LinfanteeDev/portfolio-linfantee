@@ -138,3 +138,28 @@
     </div>
   </div>
 </section>
+<!-- 4. SECCIÓN: EDUCACIÓN -->
+<section class="education-section">
+  <div class="title-wrapper">
+    <h2 class="section-title education-title">Educación</h2>
+  </div>
+
+  <div class="education-box">
+    <div class="education-timeline">
+      
+      <div class="education-card" *ngFor="let edu of education">
+        <div class="edu-logo">
+          <img [src]="edu.logo" [alt]="edu.institution" onerror="this.src='https://via.placeholder.com/60?text=Logo'">
+        </div>
+        
+        <div class="edu-content">
+          <span class="edu-date">{{ edu.date }}</span>
+          <h3 class="edu-degree">{{ edu.degree }}</h3>
+          <p class="edu-institution">{{ edu.institution }}</p>
+          <p class="edu-description">{{ edu.description }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

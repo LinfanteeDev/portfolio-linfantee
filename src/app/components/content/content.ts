@@ -107,5 +107,31 @@ export class Content {
       description: 'Gestión eficiente de inventario, seguimiento de pedidos y trato directo con clientes en puntos de venta y eventos.'
     }
   ];
-
+// ==========================================
+  // EDUCACIÓN Y FORMACIÓN
+  // ==========================================
+  education = [
+    {
+      institution: 'Centro Educativo Altair',
+      degree: 'Técnico Superior en Desarrollo de Aplicaciones Web (DAW)',
+      date: '2023 - 2025',
+      logo: 'altair.png',
+      description: 'Graduado. Formación técnica especializada en el desarrollo de aplicaciones web, diseño de bases de datos, entornos de servidor y arquitecturas modernas.'
+    },
+    {
+      institution: 'Udia',
+      degree: 'Introducción a la Automatización con IA',
+      date: 'Formación Complementaria',
+      logo: 'udia.png',
+      description: 'Especialización orientada a la automatización de procesos mediante el uso de Inteligencia Artificial.'
+    },
+    {
+      institution: 'Centro Educativo Altair',
+      degree: 'Bachillerato',
+      date: '2021 - 2023',
+      logo: 'altair.png',
+      description: 'Graduado.'
+    }
+  ];
 }
+
