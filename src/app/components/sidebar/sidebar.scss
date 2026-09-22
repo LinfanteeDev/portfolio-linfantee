@@ -1,63 +1,191 @@
 .profile-card {
+  text-align: center;
+  padding: 2rem;
   background-color: #ffffff;
   border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   border: 1px solid #eeeeee;
-  transition: background-color 0.3s, border-color 0.3s;
 
   .profile-img {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 1rem;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #007bff; /* Anillo azul */
+    border: 3px solid #007bff;
 
-    img { 
-      width: 100%; 
-      height: 100%; 
+    img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      object-position: center 15%; /* Mueve el enfoque un poco hacia arriba */
-      transform: scale(1.15); /* Hace un ligero zoom del 15% para rellenar mejor */
     }
   }
 
-  h2 { margin: 0; font-size: 1.5rem; color: #333333; }
-  .role { color: #666666; font-weight: 500; margin: 0.5rem 0 1.5rem; }
-    .description {
-      font-size: 0.9rem;
-     color: #555555;
-     line-height: 1.5;
-     margin-bottom: 1.5rem;
-     padding: 0 0.5rem;
-     }
-  .btn-primary {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-bottom: 1.5rem;
-
-    &:hover { background-color: #0056b3; }
+  h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 0.5rem;
   }
 
-  .social-links {
+  /* Rol en azul y mayúsculas como en la imagen */
+  .role {
+    font-size: 0.9rem;
+    color: #007bff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Estructura centralizada para los iconos de contacto */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: #555555;
+      position: relative;
+
+      .icon-left {
+        flex-shrink: 0;
+      }
+
+      .text {
+        font-size: 0.75rem; /* Más pequeño para que quepa en una línea */
+        white-space: nowrap; /* Prohíbe que el texto se parta en dos líneas */
+      }
+
+      /* Estilo para que el enlace de GitHub no parezca un enlace azul por defecto */
+      .link-hover {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s;
+        
+        &:hover {
+          color: #007bff;
+        }
+      }
+
+      /* Solo el icono de la derecha hace la función de copiar */
+      .icon-copy {
+        cursor: pointer;
+        transition: color 0.2s, transform 0.2s;
+        
+        &:hover {
+          color: #007bff;
+          transform: scale(1.1);
+        }
+      }
+
+      .copy-badge {
+        position: absolute;
+        right: -65px;
+        top: -25px;
+        background: #28a745;
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        animation: fadeInOut 2s forwards;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 10;
+      }
+    }
+  }
+
+  .description {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  /* Redes sociales abajo del todo */
+  .social-networks-bottom {
     display: flex;
     justify-content: center;
     gap: 1.2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eeeeee;
 
     a {
-      text-decoration: none;
-      font-size: 1.5rem;
-      transition: transform 0.2s;
-      &:hover { transform: scale(1.2); }
+      color: #555555;
+      transition: color 0.2s, transform 0.2s;
+      
+      &:hover {
+        color: #007bff;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(5px); }
+  15% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+/* =========================================
+   MODO OSCURO (BARRA LATERAL)
+   ========================================= */
+:host-context(body.dark-theme) {
+  .profile-card {
+    background-color: #1e1e1e;
+    border-color: #333333;
+
+    h2 { 
+      color: #ffffff; 
+    }
+    
+    .description { 
+      color: #bbbbbb; 
+    }
+
+    .contact-info {
+      .contact-row {
+        color: #cccccc; /* Color claro para los iconos */
+        
+        .text {
+          color: #cccccc; /* Color claro para el texto */
+        }
+        
+        /* Enlace de GitHub en modo oscuro */
+        .link-hover {
+          color: #cccccc;
+          &:hover { 
+            color: #4da3ff; /* Azul más brillante al pasar el ratón */
+          }
+        }
+        
+        /* Icono de copiar al pasar el ratón */
+        .icon-copy:hover { 
+          color: #4da3ff; 
+        }
+      }
     }
   }
 }
